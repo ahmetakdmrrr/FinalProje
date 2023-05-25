@@ -1,3 +1,25 @@
 from Insan import Insan
 class Issiz(Insan):
-    pass
+     def __int__(self,ad,soyad,tecrübe):
+        self.__ad=ad
+        self.__soyad=soyad
+        self.__tecrübe=tecrübe
+        self.__statü=self.statü_bul()
+    def get_ad(self):
+        return self.__ad
+
+    def set_ad(self, ad):
+        self.__ad = ad
+
+    def get_soyad(self):
+        return self.__soyad
+
+    def set_soyad(self, soyad):
+        self.__soyad = soyad
+
+    def get_tecrube(self):
+        return self.__tecrube
+
+    def set_tecrube(self, tecrube):
+        self.__tecrube = tecrube
+        self.__statu = self.statu_bul()
