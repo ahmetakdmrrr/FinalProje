@@ -23,3 +23,26 @@ class Issiz(Insan):
     def set_tecrube(self, tecrube):
         self.__tecrube = tecrube
         self.__statu = self.statu_bul()
+     def statü_bul(self):
+        maks_etki=0
+        etki=0
+        for statü,yıl in self.__tecrübe.items():
+            try:
+                yıl=int(yıl)
+                etki=0
+                if statü=="mavi yaka":
+                    etki=yıl/5
+                elif statü=="beyaz yaka":
+                    etki=(yıl)*(35/100)
+                elif statü=="yönetici":
+                    etki=(yıl)*(45/100)
+
+                if etki>maks_etki:
+                    maks_etki=etki
+                    karar_statü=statü
+            except:
+                print("geçersiz bir yıl veya statü tekrar deneyiniz",yıl)
+        if karar_statü=="":
+            return "bilinmiyor ne olduğu"
+        else:
+            return f"belirlendi statü iletiliyor...\n{karar_statü}"
