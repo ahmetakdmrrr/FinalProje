@@ -28,4 +28,27 @@ class Calisan(ABC,Insan):
         self.__maaş=maaş
     def set_tecrübe(self,tecrübe):
         self.__tecrübe=tecrübe
+    def zam_hakkı(self):
+        a=""
+        try:
+            maaş=int(self.__maaş)
+            if self.__tecrübe>=0:
+                if self.__tecrübe<24:
+                    a="maaş zam hakkınız bulunmamaktadır."
+                elif self.__tecrübe<48 and self.__tecrübe>24:
+                    if self.__maaş<15000:
+                        a="maaşınıza zam yapılıyor...\n"
+                        zam_miktarı=self.__maaş%self.__tecrübe
+                        self.__maaş=self.__maaş+zam_miktarı
+                elif self.__tecrübe>48 and self.__maaş<25000:
+                    a="maaşınıza zam yapılıyor...\n"
+                    zam_miktarı=(self.__maaş%self.__tecrübe)/2
+                    self.__maaş=(self.__maaş)+(zam_miktarı)
+                else:
+                   a="tecrübe girişinizde hata bulunmaktadır..."
+        except:
+            return "girdilerinizde hata buluhmaktadır tekrar deneyiniz"
+        return f"{a}\n{self.__maaş}"
+    def __str__(self):
+        return f"yeni maaşı={self.zam_hakkı()}\nisim={self.__ad}\nsoyisim={self.__soyad}\ntecrübe={self.__tecrübe}"
     
