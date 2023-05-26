@@ -15,3 +15,17 @@ class Calisan(ABC,Insan):
         else:
             print("geçersiz bir sektor girdiniz o yüzden diğer seçeneği seçildi.\n")
             return "diğer"
+    def get_sektor(self):
+        return self.__sektor
+    def set_sektor(self,sektor):
+        self.__sektor=self.dogru_sektor()
+
+    def get_maaş(self):
+        return self.__maaş
+    def get_tecrübe(self):
+        return self.__tecrübe
+    def set_maaş(self,maaş):
+        self.__maaş=maaş
+    def set_tecrübe(self,tecrübe):
+        self.__tecrübe=tecrübe
+    
