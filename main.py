@@ -56,4 +56,32 @@ veri={
     "Statü":[0,0,calisan1.statü_bul(),calisan2.statü_bul(),calisan3.statü_bul(),maviYaka1.statü_bul(),maviYaka2.statü_bul(),maviYaka3.statü_bul(),beyazYaka1.statü_bul(),beyazYaka2.statü_bul(),beyazYaka3.statü_bul()]
 
 }
+df=pd.DataFrame(veri,[1,2,3,4,5,6,7,8,9,10,11])
+
+print(df)
+print("**************************************************")
+onbes_ustu_maas=df[df["MAAŞ"]>15000]
+print("Maaşı 15000 liranın üzerinde olan kişi sayısı:",len(onbes_ustu_maas),"\n")
+
+print("**************************************************")
+
+kucuk_df=df.sort_values("YENİ MAAŞ")
+print("Yeni Maaşa göre sıralama:\n",kucuk_df)
+
+
+bul=(df["Statü"]=='Beyaz Yaka') & (df['TECRÜBE']>3)
+beyaz_yakalar= df[bul]
+print(beyaz_yakalar)
+
+print("**************************************************")
+
+seçili_liste = df[(df.index >= 2) & (df.index <= 5) & (df["YENİ MAAŞ"] > 10000)][["T.C", "YENİ MAAŞ"]]
+print(seçili_liste)
+
+print("**************************************************")
+
+
+yeni_df=df[["İSİM","SOYİSİM","SEKTÖR","YENİ MAAŞ"]]
+print(yeni_df)
+
 
