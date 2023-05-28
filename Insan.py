@@ -43,4 +43,6 @@ class Insan(ABC):
 
     def set_uyruk(self,uyruk):
         self.__uyruk=uyruk
+    def __str__(self):
+        return f"tc kimlik numarası={self.__tc_no}\nadı={self.__ad}\nsoyadı={self.__soyad}\nyaşı={self.__yaş}\ncinsiyeti={self.__cinsiyet}\nuyruk bilgisi={self.__uyruk}"
 
